@@ -17,7 +17,7 @@ Git (optional but recommended)
 
 ## Setup Instructions
 
-1. Clone the Repository
+1. Clone the Repository <br/>
 bash
 git clone https://github.com/your-username/todo_app.git
 cd todo_app
