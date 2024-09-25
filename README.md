@@ -21,7 +21,7 @@ git clone https://github.com/your-username/todo_app.git
 cd todo_app
 
 
-3. Create a Virtual Environment
+2. Create a Virtual Environment
 #bash
 python -m venv venv
 Activate the virtual environment:
@@ -40,14 +40,18 @@ Install the required Python packages by running:
 pip install -r requirements.txt
 
 
-5. Set Up Environment Variables
+4. Set Up Environment Variables
 Create a .env file in the root directory of the project and add the following variables:
 
 #bash
+SECRET_KEY='django-insecure-s^^r4egfndie7i!1ac0yu%h*%zsc($j-k2xk$t(i)s&#hluv=6'
+DEBUG=True
+ALLOWED_HOSTS=to-do-list-webapp-8k0i.onrender.com
+DB_ENGINE='django.db.backends.sqlite3'
+DB_NAME='db.sqlite3'
 
 
-
-7. Apply Database Migrations
+5. Apply Database Migrations
 Run the following command to create the necessary database tables:
 
 #bash
@@ -60,7 +64,7 @@ To access the Django admin and manage tasks:
 python manage.py createsuperuser
 
 
-8. Run the Development Server
+7. Run the Development Server
 You can start the server using:
 #bash
 python manage.py runserver
