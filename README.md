@@ -1,3 +1,5 @@
+## DJANGO TO-DO App
+
 A simple web-based To-Do list application built with Django.
 
 Features:-
@@ -16,7 +18,7 @@ Git (optional but recommended)
 ## Setup Instructions
 
 1. Clone the Repository
-#bash
+bash
 git clone https://github.com/your-username/todo_app.git
 cd todo_app
 
