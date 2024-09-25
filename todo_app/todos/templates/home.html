@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - To-Do List App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #d1d1d1, #b0b0b0); /* Darker grey gradient */
+            animation: fadeIn 1s; /* Animation for fade in */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            margin-top: 100px; /* Space above content */
+        }
+
+        h1, p {
+            animation: slideIn 0.5s ease forwards; /* Slide in animation for text */
+            opacity: 0; /* Start invisible */
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px); /* Start from above */
+                opacity: 0; /* Start invisible */
+            }
+            to {
+                transform: translateY(0); /* End at original position */
+                opacity: 1; /* End visible */
+            }
+        }
+
+        /* Delay animations for heading and paragraph */
+        h1 {
+            animation-delay: 0.2s;
+        }
+        p {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">To-Do List App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'todos' %}">My To-Do List</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center">Welcome to To-Do List App</h1>
+        <p class="text-center lead">Stay organized and manage your tasks efficiently!</p>
+    </div>
+
+
+
+</body>
+</html>
+

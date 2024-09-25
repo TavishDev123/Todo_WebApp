@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">My To-Do List</h2>
+
+    <!-- Display success/error messages -->
+    {% if messages %}
+        <div class="alert alert-info">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- Add To-Do Button -->
+    <div class="mb-4">
+        <a href="{% url 'todo-add' %}" class="btn btn-success">Add New To-Do</a>
+    </div>
+
+    {% if todos %}
+        <div class="row">
+            {% for todo in todos %}
+                <div class="col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ todo.title }}</h5>
+                            <p class="card-text">{{ todo.description|default:"No description provided" }}</p>
+                            <p class="card-text">
+                                <small class="text-muted">Completed: {{ todo.completed|yesno:"Yes,No" }}</small>
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <a href="{% url 'edit_todo' todo.id %}" class="btn btn-primary">Edit</a>
+                                <form action="{% url 'todo-delete' todo.id %}" method="POST" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">You have no to-dos yet. <a href="{% url 'todo-add' %}">Add a new to-do</a>.</div>
+    {% endif %}
+</div>
+{% endblock %}
+
+
+
+
